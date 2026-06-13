@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/* RESET GENERAL */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* BODY */
+body{
+    font-family:'Poppins', 'Segoe UI', Arial, sans-serif;
+    background:linear-gradient(135deg,#f4f7fb,#e9eef7);
+    color:#1e293b;
+    line-height:1.6;
+    min-height:100vh;
+}
+
+/* HEADER */
+header{
+    background:linear-gradient(135deg,#0f172a,#1e3a8a);
+    color:white;
+    padding:20px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    box-shadow:0 4px 15px rgba(0,0,0,0.15);
+    position:sticky;
+    top:0;
+    z-index:1000;
+    backdrop-filter:blur(10px);
+}
+
+/* TITULO */
+header h1{
+    font-size:28px;
+    font-weight:600;
+    color:#38bdf8;
+    letter-spacing:1px;
+}
+
+/* NAVBAR */
+nav{
+    display:flex;
+    gap:20px;
+    margin-top:10px;
+}
+
+/* LINKS */
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:16px;
+    font-weight:500;
+    padding:10px 16px;
+    border-radius:10px;
+    transition:all 0.3s ease;
+    position:relative;
+}
+
+/* HOVER */
+nav a:hover{
+    background:rgba(255,255,255,0.15);
+    color:#38bdf8;
+    transform:translateY(-2px);
+}
+
+/* LINEA ANIMADA */
+nav a::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    bottom:5px;
+    width:0%;
+    height:2px;
+    background:white;
+    transition:0.3s;
+    transform:translateX(-50%);
+}
+
+nav a:hover::after{
+    width:60%;
+}
+
+/* MAIN */
+main{
+    max-width:1200px;
+    margin:50px auto;
+    padding:20px;
+}
+
+/* SECCIONES / CARDS */
+section,
+.card{
+    background:white;
+    padding:25px;
+    border-radius:18px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+    margin-bottom:25px;
+    transition:0.3s;
+}
+
+/* EFECTO CARD */
+section:hover,
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 30px rgba(0,0,0,0.12);
+}
+
+/* BOTONES */
+button,
+.btn{
+    display:inline-block;
+    padding:15px 22px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(135deg,#007bff,#00bfff);
+    color:white;
+    font-size:16px;
+    font-weight:600;
+    letter-spacing:0.5px;
+    text-decoration:none;
+    cursor:pointer;
+    position:relative;
+    overflow:hidden;
+    transition:all 0.35s ease;
+    box-shadow:0 8px 20px rgba(0,123,255,0.35);
+}
+
+/* BRILLO */
+button::before,
+.btn::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-75%;
+    width:50%;
+    height:100%;
+    background:rgba(255,255,255,0.25);
+    transform:skewX(-25deg);
+    transition:0.6s;
+}
+
+/* ANIMACION BRILLO */
+button:hover::before,
+.btn:hover::before{
+    left:130%;
+}
+
+/* HOVER BOTON */
+button:hover,
+.btn:hover{
+    transform:translateY(-3px) scale(1.02);
+    box-shadow:0 12px 25px rgba(0,123,255,0.45);
+    background:linear-gradient(135deg,#0069d9,#00a2ff);
+}
+
+/* CLICK */
+button:active,
+.btn:active{
+    transform:scale(0.98);
+}
+
+/* FOCUS */
+button:focus,
+.btn:focus{
+    outline:none;
+    box-shadow:
+        0 0 0 4px rgba(0,123,255,0.2),
+        0 10px 25px rgba(0,123,255,0.35);
+}
+
+/* FOOTER */
+footer{
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:50px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+    header{
+        flex-direction:column;
+        gap:15px;
+        text-align:center;
+        padding:20px;
+    }
+
+    nav{
+        flex-direction:column;
+        width:100%;
+        justify-content:center;
+    }
+
+    nav a{
+        display:block;
+        width:100%;
+    }
+
+    main{
+        padding:20px;
+    }
+}
