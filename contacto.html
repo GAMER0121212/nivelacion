@@ -3,62 +3,71 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Formularios y Tarjetas Modernas</title>
+<title>Dashboard con Diseño Impecable</title>
 
 <style>
+    /* --- RESETEO Y CONFIGURACIÓN PREMIUM --- */
     * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: Arial, sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+        -webkit-font-smoothing: antialiased;
     }
 
     body {
-        background: #f4f6f9;
+        background-color: #fafbfe;
+        color: #1e293b;
         min-height: 100vh;
-        padding-bottom: 50px;
+        padding-bottom: 60px;
     }
 
-    /* --- SISTEMA DE PESTAÑAS (TABS) CON CSS PURO --- */
+    /* --- NAVEGACIÓN MODERNA (TABS) --- */
     .nav-tabs {
         display: flex;
         justify-content: center;
-        background: white;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         position: sticky;
         top: 0;
         z-index: 100;
-        margin-bottom: 40px;
+        margin-bottom: 50px;
+        gap: 10px;
+        padding: 10px 0;
     }
 
     .tab-label {
-        padding: 20px 30px;
+        padding: 12px 24px;
         cursor: pointer;
-        font-weight: bold;
-        color: #666;
-        transition: 0.3s;
-        border-bottom: 3px solid transparent;
+        font-weight: 600;
+        font-size: 15px;
+        color: #64748b;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border-radius: 10px;
     }
 
     .tab-label:hover {
-        color: #007bff;
+        color: #4f46e5;
+        background: rgba(79, 70, 229, 0.05);
     }
 
-    /* Truco CSS: Ocultar los radio buttons y usar el selector :checked */
+    /* Lógica de selección de pestañas sin JS */
     input[type="radio"] {
         display: none;
     }
 
     #tab1:checked ~ .nav-tabs label[for="tab1"],
     #tab2:checked ~ .nav-tabs label[for="tab2"] {
-        color: #007bff;
-        border-bottom-color: #007bff;
+        color: #4f46e5;
+        background: rgba(79, 70, 229, 0.08);
     }
 
-    /* Mostrar/Ocultar secciones según la pestaña activa */
+    /* Animación de entrada suave para el contenido */
     .seccion-contenido {
         display: none;
-        animation: fadeIn 0.5s ease;
+        animation: smoothReveal 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     #tab1:checked ~ .contenedor-principal #seccion-formularios,
@@ -66,179 +75,215 @@
         display: flex;
     }
 
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(10px); }
+    @keyframes smoothReveal {
+        from { opacity: 0; transform: translateY(15px); }
         to { opacity: 1; transform: translateY(0); }
     }
 
     /* --- CONTENEDORES GENERALES --- */
     .contenedor-principal {
-        max-width: 1200px;
+        max-width: 1140px;
         margin: 0 auto;
-        padding: 0 20px;
+        padding: 0 24px;
     }
 
     .grid-layout {
         display: flex;
         flex-wrap: wrap;
-        gap: 30px;
+        gap: 32px;
         justify-content: center;
         width: 100%;
     }
 
-    /* --- ESTILOS DE LOS FORMULARIOS (Mantienen tu esencia original) --- */
+    /* --- TARJETAS BASE (FORMULARIOS) --- */
     .formulario-card {
-        background: white;
+        background: #ffffff;
         padding: 40px;
-        border-radius: 15px;
+        border-radius: 20px;
         width: 100%;
-        max-width: 380px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-        flex: 1 1 350px;
+        max-width: 360px;
+        border: 1px solid rgba(0, 0, 0, 0.04);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 10px 15px -3px rgba(0, 0, 0, 0.03), 0 20px 25px -5px rgba(0, 0, 0, 0.02);
+        flex: 1 1 340px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .formulario-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
     }
 
     .formulario-card.ancho-completo {
-        max-width: 450px;
+        max-width: 440px;
     }
 
     .formulario-card h2 {
-        text-align: center;
-        margin-bottom: 25px;
-        color: #333;
+        font-weight: 700;
         font-size: 24px;
+        letter-spacing: -0.5px;
+        color: #0f172a;
+        margin-bottom: 28px;
+        text-align: center;
     }
 
     .grupo {
-        margin-bottom: 20px;
+        margin-bottom: 22px;
     }
 
     label {
         display: block;
         margin-bottom: 8px;
-        color: #555;
-        font-weight: bold;
-        font-size: 14px;
+        color: #475569;
+        font-weight: 600;
+        font-size: 13px;
+        letter-spacing: 0.2px;
     }
 
     input, textarea {
         width: 100%;
-        padding: 12px;
-        border: 1px solid #ccc;
-        border-radius: 8px;
+        padding: 13px 16px;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
         outline: none;
-        transition: 0.3s;
+        background-color: #f8fafc;
+        color: #0f172a;
         font-size: 15px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    input::placeholder, textarea::placeholder {
+        color: #94a3b8;
     }
 
     input:focus, textarea:focus {
-        border-color: #007bff;
-        box-shadow: 0 0 5px rgba(0,123,255,0.3);
+        background-color: #ffffff;
+        border-color: #6366f1;
+        box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.12);
     }
 
     textarea {
         resize: none;
-        height: 100px;
+        height: 110px;
     }
 
+    /* --- BOTONES PREMIUM --- */
     button, .btn {
         width: 100%;
         padding: 14px;
         border: none;
-        background: #007bff;
-        color: white;
-        font-size: 16px;
-        border-radius: 8px;
+        background: #4f46e5;
+        color: #ffffff;
+        font-size: 15px;
+        font-weight: 600;
+        border-radius: 12px;
         cursor: pointer;
-        transition: 0.3s;
-        font-weight: bold;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        display: inline-block;
         text-align: center;
         text-decoration: none;
-        display: inline-block;
+        box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
     }
 
     button:hover, .btn:hover {
-        background: #0056b3;
+        background: #4338ca;
+        box-shadow: 0 6px 20px rgba(79, 70, 229, 0.3);
+        transform: translateY(-1px);
     }
 
-    /* --- NUEVAS TARJETAS INFORMATIVAS (CARDS) --- */
+    button:active, .btn:active {
+        transform: translateY(1px);
+    }
+
+    /* --- TARJETAS INFORMATIVAS IMPECABLES --- */
     .tarjeta-info {
-        background: white;
-        border-radius: 15px;
-        overflow: hidden; /* Para que la imagen respete las esquinas redondeadas */
-        box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        background: #ffffff;
+        border-radius: 24px;
+        overflow: hidden;
+        border: 1px solid rgba(0, 0, 0, 0.04);
+        box-shadow: 0 10px 30px -10px rgba(0,0,0,0.04);
         width: 100%;
         max-width: 350px;
         flex: 1 1 300px;
         display: flex;
         flex-direction: column;
-        transition: transform 0.3s, box-shadow 0.3s;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .tarjeta-info:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        transform: translateY(-6px);
+        box-shadow: 0 22px 40px -15px rgba(0, 0, 0, 0.08);
     }
 
-    /* Marcador de posición para simular una imagen bonita */
     .tarjeta-imagen {
-        height: 180px;
-        background: linear-gradient(135deg, #007bff, #00d2ff);
+        height: 190px;
+        background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
         display: flex;
         align-items: center;
         justify-content: center;
-        color: white;
-        font-size: 40px;
+        font-size: 44px;
+        position: relative;
     }
-
-    .tarjeta-imagen.verde { background: linear-gradient(135deg, #28a745, #1dd1a1); }
-    .tarjeta-imagen.purpura { background: linear-gradient(135deg, #6f42c1, #a18cd1); }
+    
+    /* Variaciones sutiles de color para fondos de imagen */
+    .tarjeta-imagen.azul { background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%); }
+    .tarjeta-imagen.purpura { background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%); }
+    .tarjeta-imagen.verde { background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%); }
 
     .tarjeta-cuerpo {
-        padding: 25px;
+        padding: 32px;
         display: flex;
         flex-direction: column;
         flex-grow: 1;
     }
 
     .tarjeta-cuerpo h3 {
-        color: #333;
+        color: #0f172a;
         font-size: 20px;
-        margin-bottom: 10px;
+        font-weight: 700;
+        letter-spacing: -0.3px;
+        margin-bottom: 12px;
     }
 
     .tarjeta-cuerpo p {
-        color: #666;
+        color: #64748b;
         font-size: 14px;
-        line-height: 1.5;
-        margin-bottom: 20px;
-        flex-grow: 1; /* Empuja el botón hacia el fondo de la tarjeta */
+        line-height: 1.6;
+        margin-bottom: 24px;
+        flex-grow: 1;
     }
 
-    /* Tarjeta tipo "Precio" */
     .precio-tag {
-        font-size: 28px;
-        font-weight: bold;
-        color: #333;
-        margin-bottom: 15px;
+        font-size: 32px;
+        font-weight: 800;
+        color: #0f172a;
+        letter-spacing: -1px;
+        margin-bottom: 16px;
     }
+    
     .precio-tag span {
         font-size: 14px;
-        color: #888;
+        color: #94a3b8;
+        font-weight: 500;
+        letter-spacing: 0;
     }
 
-    /* --- RESPONSIVO --- */
-    @media(max-width:600px){
+    /* --- RESPONSIVO ULTRA AJUSTADO --- */
+    @media(max-width:640px){
         .formulario-card, .tarjeta-cuerpo {
-            padding: 25px;
+            padding: 30px 24px;
         }
         .nav-tabs {
-            flex-direction: column;
-            align-items: center;
+            padding: 10px;
+            gap: 5px;
         }
         .tab-label {
-            padding: 12px;
-            width: 100%;
+            padding: 10px 16px;
+            font-size: 13px;
+            flex: 1;
             text-align: center;
+        }
+        body {
+            padding-bottom: 30px;
         }
     }
 </style>
@@ -249,8 +294,8 @@
 <input type="radio" id="tab2" name="navigation">
 
 <div class="nav-tabs">
-    <label for="tab1" class="tab-label">Sección Formularios</label>
-    <label for="tab2" class="tab-label">Sección Tarjetas Informativas</label>
+    <label for="tab1" class="tab-label">Formularios</label>
+    <label for="tab2" class="tab-label">Tarjetas</label>
 </div>
 
 <div class="contenedor-principal">
@@ -262,13 +307,13 @@
             <form action="#" method="POST">
                 <div class="grupo">
                     <label for="login-correo">Correo electrónico</label>
-                    <input type="email" id="login-correo" placeholder="usuario@correo.com" required>
+                    <input type="email" id="login-correo" placeholder="nombre@ejemplo.com" required>
                 </div>
                 <div class="grupo">
                     <label for="login-password">Contraseña</label>
-                    <input type="password" id="login-password" placeholder="Tu contraseña" required>
+                    <input type="password" id="login-password" placeholder="••••••••" required>
                 </div>
-                <button type="submit">Ingresar</button>
+                <button type="submit">Acceder</button>
             </form>
         </div>
 
@@ -277,36 +322,36 @@
             <form action="#" method="POST">
                 <div class="grupo">
                     <label for="reg-nombre">Nombre completo</label>
-                    <input type="text" id="reg-nombre" placeholder="Juan Pérez" required>
+                    <input type="text" id="reg-nombre" placeholder="Ingresa tu nombre" required>
                 </div>
                 <div class="grupo">
                     <label for="reg-correo">Correo electrónico</label>
-                    <input type="email" id="reg-correo" placeholder="ejemplo@correo.com" required>
+                    <input type="email" id="reg-correo" placeholder="correo@ejemplo.com" required>
                 </div>
                 <div class="grupo">
                     <label for="reg-password">Contraseña</label>
-                    <input type="password" id="reg-password" placeholder="Mínimo 8 caracteres" required>
+                    <input type="password" id="reg-password" placeholder="Crea una contraseña" required>
                 </div>
-                <button type="submit">Registrarse</button>
+                <button type="submit">Comenzar ahora</button>
             </form>
         </div>
 
         <div class="formulario-card ancho-completo">
-            <h2>Contáctanos</h2>
+            <h2>Enviar Mensaje</h2>
             <form action="#" method="POST">
                 <div class="grupo">
                     <label for="con-nombre">Nombre</label>
-                    <input type="text" id="con-nombre" placeholder="Tu nombre" required>
+                    <input type="text" id="con-nombre" placeholder="Tu nombre completo" required>
                 </div>
                 <div class="grupo">
                     <label for="con-correo">Correo electrónico</label>
-                    <input type="email" id="con-correo" placeholder="ejemplo@correo.com" required>
+                    <input type="email" id="con-correo" placeholder="tu@correo.com" required>
                 </div>
                 <div class="grupo">
                     <label for="con-mensaje">Mensaje</label>
-                    <textarea id="con-mensaje" placeholder="Escribe tu mensaje..." required></textarea>
+                    <textarea id="con-mensaje" placeholder="¿En qué podemos ayudarte?" required></textarea>
                 </div>
-                <button type="submit">Enviar mensaje</button>
+                <button type="submit">Enviar formulario</button>
             </form>
         </div>
 
@@ -316,30 +361,30 @@
     <div id="seccion-tarjetas" class="seccion-contenido grid-layout">
         
         <div class="tarjeta-info">
-            <div class="tarjeta-imagen">💻</div>
+            <div class="tarjeta-imagen azul">✨</div>
             <div class="tarjeta-cuerpo">
-                <h3>Desarrollo Web Premium</h3>
-                <p>Creamos sitios web ultra rápidos, completamente responsivos y optimizados para motores de búsqueda (SEO). Eleva tu negocio al siguiente nivel digital.</p>
-                <a href="#" class="btn">Saber más</a>
+                <h3>Desarrollo Premium</h3>
+                <p>Sitios y aplicaciones web optimizadas al milisegundo, completamente accesibles y enfocadas en ofrecer la mejor experiencia de usuario del mercado.</p>
+                <a href="#" class="btn">Explorar servicio</a>
             </div>
         </div>
 
         <div class="tarjeta-info">
-            <div class="tarjeta-imagen purpura">🚀</div>
+            <div class="tarjeta-imagen purpura">⚡</div>
             <div class="tarjeta-cuerpo">
-                <h3>Plan Pro</h3>
-                <div class="precio-tag">$29.99 <span>/ mes</span></div>
-                <p>Ideal para profesionales y pequeñas empresas en crecimiento. Incluye soporte 24/7, almacenamiento ilimitado y reportes avanzados mensuales.</p>
-                <a href="#" class="btn" style="background: #6f42c1;">Adquirir Plan</a>
+                <h3>Suscripción Pro</h3>
+                <div class="precio-tag">$24<span>/mes</span></div>
+                <p>Desbloquea análisis avanzados en tiempo real, soporte prioritario corporativo y almacenamiento ilimitado en la nube para todo tu equipo.</p>
+                <a href="#" class="btn" style="background: #7c3aed; box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2);">Adquirir Pro</a>
             </div>
         </div>
 
         <div class="tarjeta-info">
-            <div class="tarjeta-imagen verde">🌱</div>
+            <div class="tarjeta-imagen verde">🎨</div>
             <div class="tarjeta-cuerpo">
-                <h3>Diseño Sustentable</h3>
-                <p>Descubre cómo las últimas tendencias en interfaces digitales se están adaptando para reducir la huella de carbono y mejorar la accesibilidad global.</p>
-                <a href="#" class="btn" style="background: #28a745;">Leer artículo</a>
+                <h3>Diseño UI/UX</h3>
+                <p>El balance perfecto entre estética sofisticada y funcionalidad de vanguardia. Diseñamos componentes modulares escalables e interfaces intuitivas.</p>
+                <a href="#" class="btn" style="background: #16a34a; box-shadow: 0 4px 12px rgba(22, 163, 74, 0.2);">Ver portafolio</a>
             </div>
         </div>
 
