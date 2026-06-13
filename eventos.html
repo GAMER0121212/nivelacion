@@ -96,7 +96,7 @@
             margin: 50px auto;
             padding: 20px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
         }
 
@@ -107,6 +107,9 @@
             box-shadow: 0 6px 18px rgba(0,0,0,0.12);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .evento-card:hover {
@@ -117,11 +120,42 @@
         .evento-card h2 {
             color: #0d6efd;
             margin-top: 0;
+            font-size: 1.4rem;
         }
 
         .evento-card p {
             color: #555;
             line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        /* Detalles adicionales de eventos */
+        .evento-detalles {
+            font-size: 0.9rem;
+            color: #777;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        .evento-detalles div {
+            margin-bottom: 5px;
+        }
+
+        .btn-tarjeta {
+            background: #0d6efd;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .btn-tarjeta:hover {
+            background: #0047b3;
         }
 
         /* FOOTER */
@@ -149,7 +183,6 @@
 
 <body>
 
-    <!-- ENCABEZADO -->
     <header class="hero">
         <div class="overlay">
 
@@ -166,11 +199,11 @@
             </nav>
 
             <div class="hero-content">
-                <h1>🎉 Lista de Eventos</h1>
+                <h1>Lista de Eventos</h1>
 
                 <p>
                     Descubre los mejores eventos culturales,
-                    musicales y tecnológicos en Chiapas.
+                    musicales, tecnológicos y gastronómicos en Chiapas.
                 </p>
 
                 <a href="#eventos" class="btn">
@@ -181,29 +214,128 @@
         </div>
     </header>
 
-    <!-- EVENTOS -->
     <main id="eventos">
 
         <section class="eventos-container">
 
             <div class="evento-card">
-                <h2>Festival Cultural</h2>
-                <p>Tradiciones, música y gastronomía regional.</p>
+                <div>
+                    <h2>Festival Cultural del Parachico</h2>
+                    <p>Tradiciones viva, música de tambor y pito, danza y la espectacular gastronomía regional de Chiapa de Corzo.</p>
+                </div>
+                <div>
+                    <div class="evento-detalles">
+                        <div> <strong>Lugar:</strong> Chiapa de Corzo</div>
+                        <div> <strong>Fecha:</strong> 15 al 23 de Enero</div>
+                        <div> <strong>Hora:</strong> 10:00 AM</div>
+                    </div>
+                    <a href="#" class="btn-tarjeta">Más Información</a>
+                </div>
             </div>
 
             <div class="evento-card">
-                <h2>Concierto Regional</h2>
-                <p>Los mejores artistas locales en vivo.</p>
+                <div>
+                    <h2>Concierto Marimbas del Mundo</h2>
+                    <p>Disfruta de los mejores artistas locales e internacionales ejecutando el instrumento rey de nuestro estado en vivo.</p>
+                </div>
+                <div>
+                    <div class="evento-detalles">
+                        <div> <strong>Lugar:</strong> Teatro de la Ciudad, Tuxtla Gtz</div>
+                        <div> <strong>Fecha:</strong> 05 de Julio</div>
+                        <div> <strong>Hora:</strong> 08:00 PM</div>
+                    </div>
+                    <a href="#" class="btn-tarjeta">Más Información</a>
+                </div>
             </div>
 
             <div class="evento-card">
-                <h2>Expo Tecnología</h2>
-                <p>Innovación y tendencias tecnológicas.</p>
+                <div>
+                    <h2>Expo Tecnología e Innovación</h2>
+                    <p>El punto de encuentro para mentes brillantes. Conferencias de inteligencia artificial, robótica y desarrollo web.</p>
+                </div>
+                <div>
+                    <div class="evento-detalles">
+                        <div> <strong>Lugar:</strong> Centro de Convenciones, Tuxtla Gtz</div>
+                        <div><strong>Fecha:</strong> 12 de Agosto</div>
+                        <div> <strong>Hora:</strong> 09:00 AM</div>
+                    </div>
+                    <a href="#" class="btn-tarjeta">Más Información</a>
+                </div>
             </div>
 
             <div class="evento-card">
-                <h2>Expo Tradicional</h2>
-                <p>Artesanías y cultura chiapaneca.</p>
+                <div>
+                    <h2>Feria del Café y el Cacao</h2>
+                    <p>Una experiencia sensorial única. Degustaciones, talleres de barismo y venta directa de productores chiapanecos.</p>
+                </div>
+                <div>
+                    <div class="evento-detalles">
+                        <div> <strong>Lugar:</strong> Parque Central, San Cristóbal</div>
+                        <div> <strong>Fecha:</strong> 22 de Septiembre</div>
+                        <div><strong>Hora:</strong> 11:00 AM</div>
+                    </div>
+                    <a href="#" class="btn-tarjeta">Más Información</a>
+                </div>
+            </div>
+
+            <div class="evento-card">
+                <div>
+                    <h2>Maratón Fotográfico Cañón del Sumidero</h2>
+                    <p>Captura la majestuosidad de la naturaleza en este concurso y recorrido fotográfico por los miradores del cañón.</p>
+                </div>
+                <div>
+                    <div class="evento-detalles">
+                        <div> <strong>Lugar:</strong> Parque Nacional Cañón del Sumidero</div>
+                        <div><strong>Fecha:</strong> 08 de Octubre</div>
+                        <div><strong>Hora:</strong> 06:30 AM</div>
+                    </div>
+                    <a href="#" class="btn-tarjeta">Más Información</a>
+                </div>
+            </div>
+
+            <div class="evento-card">
+                <div>
+                    <h2>Festival Internacional Cervantino Barroco</h2>
+                    <p>Expresiones artísticas de todo el mundo se reúnen en las calles y recintos coloniales de San Cristóbal de Las Casas.</p>
+                </div>
+                <div>
+                    <div class="evento-detalles">
+                        <div><strong>Lugar:</strong> San Cristóbal de Las Casas</div>
+                        <div><strong>Fecha:</strong> 14 al 20 de Noviembre</div>
+                        <div><strong>Hora:</strong> 04:00 PM</div>
+                    </div>
+                    <a href="#" class="btn-tarjeta">Más Información</a>
+                </div>
+            </div>
+
+            <div class="evento-card">
+                <div>
+                    <h2>Ruta de la Aventura y Ecoturismo</h2>
+                    <p>Senderismo guiado, campismo y actividades extremas en las cascadas de El Chiflón para toda la familia.</p>
+                </div>
+                <div>
+                    <div class="evento-detalles">
+                        <div><strong>Lugar:</strong> Centro Ecoturístico El Chiflón</div>
+                        <div><strong>Fecha:</strong> 05 de Diciembre</div>
+                        <div><strong>Hora:</strong> 08:00 AM</div>
+                    </div>
+                    <a href="#" class="btn-tarjeta">Más Información</a>
+                </div>
+            </div>
+
+            <div class="evento-card">
+                <div>
+                    <h2>Encuentro de Escritores Mayas y Zoques</h2>
+                    <p>Mesas de lectura, presentaciones de libros y talleres sobre la preservación de las lenguas originarias de la región.</p>
+                </div>
+                <div>
+                    <div class="evento-detalles">
+                        <div><strong>Lugar:</strong> Casa de la Cultura, Comitán</div>
+                        <div> <strong>Fecha:</strong> 18 de Diciembre</div>
+                        <div><strong>Hora:</strong> 05:00 PM</div>
+                    </div>
+                    <a href="#" class="btn-tarjeta">Más Información</a>
+                </div>
             </div>
 
         </section>
