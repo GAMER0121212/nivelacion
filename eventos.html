@@ -6,6 +6,23 @@
     <title>Eventos | Eventos Chiapas</title>
 
     <style>
+        /* ANIMACIONES DE ENTRADA (KEYFRAMES) */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
         body {
             font-family: 'Segoe UI', sans-serif;
             margin: 0;
@@ -38,8 +55,9 @@
         .logo {
             font-size: 1.6rem;
             font-weight: bold;
-            color: #f1c40f; /* Color Ámbar/Oro */
+            color: #f1c40f;
             letter-spacing: 0.5px;
+            animation: fadeIn 1s ease-out;
         }
 
         .nav-links {
@@ -53,7 +71,8 @@
             color: #e0ece9;
             text-decoration: none;
             font-weight: 500;
-            transition: 0.3s;
+            /* Transición suave para los enlaces del menú */
+            transition: color 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
         .nav-links li a:hover,
@@ -65,6 +84,7 @@
         .hero-content {
             text-align: center;
             margin-top: 60px;
+            animation: fadeInUp 0.8s ease-out;
         }
 
         .hero-content h1 {
@@ -90,14 +110,15 @@
             border-radius: 30px;
             font-weight: bold;
             box-shadow: 0 4px 10px rgba(241, 196, 15, 0.3);
-            transition: 0.3s ease;
+            /* Transición combinada para color, fondo y movimiento al pasar el cursor */
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .btn:hover {
             background: white;
             color: #114b3e;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.25);
         }
 
         /* SECCIÓN EVENTOS */
@@ -115,17 +136,32 @@
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
             padding: 30px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            border-top: 4px solid #114b3e; /* Detalle superior verde */
+            border-top: 4px solid #114b3e;
+            
+            /* Animación al cargar la página */
+            animation: fadeInUp 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) both;
+            
+            /* Transición fluida para el efecto Hover */
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
+
+        /* Delays para que las tarjetas aparezcan en cascada una tras otra */
+        .evento-card:nth-child(1) { animation-delay: 0.1s; }
+        .evento-card:nth-child(2) { animation-delay: 0.2s; }
+        .evento-card:nth-child(3) { animation-delay: 0.3s; }
+        .evento-card:nth-child(4) { animation-delay: 0.4s; }
+        .evento-card:nth-child(5) { animation-delay: 0.5s; }
+        .evento-card:nth-child(6) { animation-delay: 0.6s; }
+        .evento-card:nth-child(7) { animation-delay: 0.7s; }
+        .evento-card:nth-child(8) { animation-delay: 0.8s; }
 
         .evento-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(11, 75, 62, 0.15);
+            box-shadow: 0 15px 35px rgba(11, 75, 62, 0.18);
         }
 
         .evento-card h2 {
@@ -168,7 +204,8 @@
             font-weight: bold;
             font-size: 0.95rem;
             display: block;
-            transition: 0.3s;
+            /* Transición suave para el cambio de color del botón interno */
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .btn-tarjeta:hover {
@@ -209,6 +246,7 @@
 
 <body>
 
+    <!-- ENCABEZADO -->
     <header class="hero">
         <div class="overlay">
 
@@ -240,10 +278,12 @@
         </div>
     </header>
 
+    <!-- EVENTOS -->
     <main id="eventos">
 
         <section class="eventos-container">
 
+            <!-- Evento 1 -->
             <div class="evento-card">
                 <div>
                     <h2>Festival Cultural del Parachico</h2>
@@ -259,6 +299,7 @@
                 </div>
             </div>
 
+            <!-- Evento 2 -->
             <div class="evento-card">
                 <div>
                     <h2>Concierto Marimbas del Mundo</h2>
@@ -274,6 +315,7 @@
                 </div>
             </div>
 
+            <!-- Evento 3 -->
             <div class="evento-card">
                 <div>
                     <h2>Expo Tecnología e Innovación</h2>
@@ -289,6 +331,7 @@
                 </div>
             </div>
 
+            <!-- Evento 4 -->
             <div class="evento-card">
                 <div>
                     <h2>Feria del Café y el Cacao</h2>
@@ -304,6 +347,7 @@
                 </div>
             </div>
 
+            <!-- Evento 5 -->
             <div class="evento-card">
                 <div>
                     <h2>Maratón Fotográfico Cañón del Sumidero</h2>
@@ -319,6 +363,7 @@
                 </div>
             </div>
 
+            <!-- Evento 6 -->
             <div class="evento-card">
                 <div>
                     <h2>Festival Internacional Cervantino Barroco</h2>
@@ -334,6 +379,7 @@
                 </div>
             </div>
 
+            <!-- Evento 7 -->
             <div class="evento-card">
                 <div>
                     <h2>Ruta de la Aventura y Ecoturismo</h2>
@@ -349,6 +395,7 @@
                 </div>
             </div>
 
+            <!-- Evento 8 -->
             <div class="evento-card">
                 <div>
                     <h2>Encuentro de Escritores Mayas y Zoques</h2>
