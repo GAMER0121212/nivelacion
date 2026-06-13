@@ -9,16 +9,16 @@
         body {
             font-family: 'Segoe UI', sans-serif;
             margin: 0;
-            background: linear-gradient(to bottom right, #eef4ff, #dfefff);
-            color: #333;
+            background: linear-gradient(to bottom right, #f4f7f5, #e8efe9);
+            color: #2c3e50;
         }
 
-        /* HEADER */
+        /* HEADER / HERO */
         .hero {
-            background: linear-gradient(135deg, #0d6efd, #0047b3);
+            background: linear-gradient(135deg, #114b3e, #082f26);
             color: white;
             padding-bottom: 50px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 15px rgba(17, 75, 62, 0.25);
         }
 
         .overlay {
@@ -31,140 +31,160 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 15px;
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: bold;
+            color: #f1c40f; /* Color Ámbar/Oro */
+            letter-spacing: 0.5px;
         }
 
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 20px;
+            gap: 25px;
             padding: 0;
         }
 
         .nav-links li a {
-            color: white;
+            color: #e0ece9;
             text-decoration: none;
+            font-weight: 500;
             transition: 0.3s;
         }
 
         .nav-links li a:hover,
         .nav-links .active {
-            color: #ffd54f;
+            color: #f1c40f;
         }
 
-        /* HERO */
+        /* HERO CONTENT */
         .hero-content {
             text-align: center;
             margin-top: 60px;
         }
 
         .hero-content h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
+            font-size: 3.2rem;
+            margin-bottom: 15px;
+            font-weight: 700;
         }
 
         .hero-content p {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             max-width: 700px;
             margin: auto;
+            color: #a3c6be;
         }
 
         .btn {
             display: inline-block;
-            margin-top: 25px;
-            padding: 12px 22px;
-            background: white;
-            color: #0d6efd;
+            margin-top: 30px;
+            padding: 12px 28px;
+            background: #f1c40f;
+            color: #082f26;
             text-decoration: none;
-            border-radius: 10px;
+            border-radius: 30px;
             font-weight: bold;
-            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(241, 196, 15, 0.3);
+            transition: 0.3s ease;
         }
 
         .btn:hover {
-            background: #ffd54f;
-            color: #000;
+            background: white;
+            color: #114b3e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.2);
         }
 
-        /* EVENTOS */
+        /* SECCIÓN EVENTOS */
         .eventos-container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 50px auto;
             padding: 20px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 30px;
         }
 
         .evento-card {
             background: white;
-            border-radius: 18px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            padding: 25px;
+            padding: 30px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            border-top: 4px solid #114b3e; /* Detalle superior verde */
         }
 
         .evento-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+            box-shadow: 0 15px 30px rgba(11, 75, 62, 0.15);
         }
 
         .evento-card h2 {
-            color: #0d6efd;
+            color: #114b3e;
             margin-top: 0;
-            font-size: 1.4rem;
+            font-size: 1.45rem;
+            line-height: 1.3;
         }
 
         .evento-card p {
-            color: #555;
-            line-height: 1.5;
-            margin-bottom: 15px;
+            color: #5a6c7d;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 0.98rem;
         }
 
-        /* Detalles adicionales de eventos */
+        /* DETALLES DE TARJETA */
         .evento-detalles {
             font-size: 0.9rem;
-            color: #777;
-            border-top: 1px solid #eee;
+            color: #647c74;
+            border-top: 1px solid #f0f4f2;
             padding-top: 15px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .evento-detalles div {
-            margin-bottom: 5px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .btn-tarjeta {
-            background: #0d6efd;
+            background: #114b3e;
             color: white;
             text-align: center;
-            padding: 10px;
-            border-radius: 8px;
+            padding: 12px;
+            border-radius: 10px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            display: block;
             transition: 0.3s;
         }
 
         .btn-tarjeta:hover {
-            background: #0047b3;
+            background: #f1c40f;
+            color: #082f26;
         }
 
         /* FOOTER */
         footer {
-            background: #0d6efd;
-            color: white;
+            background: #082f26;
+            color: #a3c6be;
             text-align: center;
-            padding: 20px;
-            margin-top: 50px;
+            padding: 25px;
+            margin-top: 60px;
+            font-size: 0.95rem;
+            border-top: 3px solid #f1c40f;
         }
 
         /* RESPONSIVE */
@@ -172,10 +192,16 @@
             .navbar {
                 flex-direction: column;
                 gap: 15px;
+                text-align: center;
             }
 
             .hero-content h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
+            }
+            
+            .eventos-container {
+                margin: 20px auto;
+                gap: 20px;
             }
         }
     </style>
@@ -188,7 +214,7 @@
 
             <nav class="navbar">
                 <div class="logo">
-                    Eventos Chiapas
+                    🌲 Eventos Chiapas
                 </div>
 
                 <ul class="nav-links">
@@ -199,15 +225,15 @@
             </nav>
 
             <div class="hero-content">
-                <h1>Lista de Eventos</h1>
+                <h1>🎉 Cartelera de Eventos</h1>
 
                 <p>
-                    Descubre los mejores eventos culturales,
-                    musicales, tecnológicos y gastronómicos en Chiapas.
+                    Explora y vive las mejores experiencias culturales, 
+                    musicales, tecnológicas y ecoturísticas en el estado de Chiapas.
                 </p>
 
                 <a href="#eventos" class="btn">
-                    Ver Eventos
+                    Explorar Eventos
                 </a>
             </div>
 
@@ -221,13 +247,13 @@
             <div class="evento-card">
                 <div>
                     <h2>Festival Cultural del Parachico</h2>
-                    <p>Tradiciones viva, música de tambor y pito, danza y la espectacular gastronomía regional de Chiapa de Corzo.</p>
+                    <p>Tradición viva, música de tambor y pito, danza y la espectacular gastronomía regional de Chiapa de Corzo.</p>
                 </div>
                 <div>
                     <div class="evento-detalles">
-                        <div> <strong>Lugar:</strong> Chiapa de Corzo</div>
-                        <div> <strong>Fecha:</strong> 15 al 23 de Enero</div>
-                        <div> <strong>Hora:</strong> 10:00 AM</div>
+                        <div>📍 <strong>Lugar:</strong> Chiapa de Corzo</div>
+                        <div>📅 <strong>Fecha:</strong> 15 al 23 de Enero</div>
+                        <div>⏰ <strong>Hora:</strong> 10:00 AM</div>
                     </div>
                     <a href="#" class="btn-tarjeta">Más Información</a>
                 </div>
@@ -236,13 +262,13 @@
             <div class="evento-card">
                 <div>
                     <h2>Concierto Marimbas del Mundo</h2>
-                    <p>Disfruta de los mejores artistas locales e internacionales ejecutando el instrumento rey de nuestro estado en vivo.</p>
+                    <p>Disfruta de los mejores artistas locales e internacionales ejecutando en vivo el instrumento rey de nuestro estado.</p>
                 </div>
                 <div>
                     <div class="evento-detalles">
-                        <div> <strong>Lugar:</strong> Teatro de la Ciudad, Tuxtla Gtz</div>
-                        <div> <strong>Fecha:</strong> 05 de Julio</div>
-                        <div> <strong>Hora:</strong> 08:00 PM</div>
+                        <div>📍 <strong>Lugar:</strong> Teatro de la Ciudad, Tuxtla Gtz</div>
+                        <div>📅 <strong>Fecha:</strong> 05 de Julio</div>
+                        <div>⏰ <strong>Hora:</strong> 08:00 PM</div>
                     </div>
                     <a href="#" class="btn-tarjeta">Más Información</a>
                 </div>
@@ -255,9 +281,9 @@
                 </div>
                 <div>
                     <div class="evento-detalles">
-                        <div> <strong>Lugar:</strong> Centro de Convenciones, Tuxtla Gtz</div>
-                        <div><strong>Fecha:</strong> 12 de Agosto</div>
-                        <div> <strong>Hora:</strong> 09:00 AM</div>
+                        <div>📍 <strong>Lugar:</strong> Centro de Convenciones, Tuxtla Gtz</div>
+                        <div>📅 <strong>Fecha:</strong> 12 de Agosto</div>
+                        <div>⏰ <strong>Hora:</strong> 09:00 AM</div>
                     </div>
                     <a href="#" class="btn-tarjeta">Más Información</a>
                 </div>
@@ -270,9 +296,9 @@
                 </div>
                 <div>
                     <div class="evento-detalles">
-                        <div> <strong>Lugar:</strong> Parque Central, San Cristóbal</div>
-                        <div> <strong>Fecha:</strong> 22 de Septiembre</div>
-                        <div><strong>Hora:</strong> 11:00 AM</div>
+                        <div>📍 <strong>Lugar:</strong> Parque Central, San Cristóbal</div>
+                        <div>📅 <strong>Fecha:</strong> 22 de Septiembre</div>
+                        <div>⏰ <strong>Hora:</strong> 11:00 AM</div>
                     </div>
                     <a href="#" class="btn-tarjeta">Más Información</a>
                 </div>
@@ -285,9 +311,9 @@
                 </div>
                 <div>
                     <div class="evento-detalles">
-                        <div> <strong>Lugar:</strong> Parque Nacional Cañón del Sumidero</div>
-                        <div><strong>Fecha:</strong> 08 de Octubre</div>
-                        <div><strong>Hora:</strong> 06:30 AM</div>
+                        <div>📍 <strong>Lugar:</strong> Parque Nacional Cañón del Sumidero</div>
+                        <div>📅 <strong>Fecha:</strong> 08 de Octubre</div>
+                        <div>⏰ <strong>Hora:</strong> 06:30 AM</div>
                     </div>
                     <a href="#" class="btn-tarjeta">Más Información</a>
                 </div>
@@ -300,9 +326,9 @@
                 </div>
                 <div>
                     <div class="evento-detalles">
-                        <div><strong>Lugar:</strong> San Cristóbal de Las Casas</div>
-                        <div><strong>Fecha:</strong> 14 al 20 de Noviembre</div>
-                        <div><strong>Hora:</strong> 04:00 PM</div>
+                        <div>📍 <strong>Lugar:</strong> San Cristóbal de Las Casas</div>
+                        <div>📅 <strong>Fecha:</strong> 14 al 20 de Noviembre</div>
+                        <div>⏰ <strong>Hora:</strong> 04:00 PM</div>
                     </div>
                     <a href="#" class="btn-tarjeta">Más Información</a>
                 </div>
@@ -311,13 +337,13 @@
             <div class="evento-card">
                 <div>
                     <h2>Ruta de la Aventura y Ecoturismo</h2>
-                    <p>Senderismo guiado, campismo y actividades extremas en las cascadas de El Chiflón para toda la familia.</p>
+                    <p>Senderismo guiado, campismo y actividades extremas en las majestuosas cascadas de El Chiflón para toda la familia.</p>
                 </div>
                 <div>
                     <div class="evento-detalles">
-                        <div><strong>Lugar:</strong> Centro Ecoturístico El Chiflón</div>
-                        <div><strong>Fecha:</strong> 05 de Diciembre</div>
-                        <div><strong>Hora:</strong> 08:00 AM</div>
+                        <div>📍 <strong>Lugar:</strong> Centro Ecoturístico El Chiflón</div>
+                        <div>📅 <strong>Fecha:</strong> 05 de Diciembre</div>
+                        <div>⏰ <strong>Hora:</strong> 08:00 AM</div>
                     </div>
                     <a href="#" class="btn-tarjeta">Más Información</a>
                 </div>
@@ -330,9 +356,9 @@
                 </div>
                 <div>
                     <div class="evento-detalles">
-                        <div><strong>Lugar:</strong> Casa de la Cultura, Comitán</div>
-                        <div> <strong>Fecha:</strong> 18 de Diciembre</div>
-                        <div><strong>Hora:</strong> 05:00 PM</div>
+                        <div>📍 <strong>Lugar:</strong> Casa de la Cultura, Comitán</div>
+                        <div>📅 <strong>Fecha:</strong> 18 de Diciembre</div>
+                        <div>⏰ <strong>Hora:</strong> 05:00 PM</div>
                     </div>
                     <a href="#" class="btn-tarjeta">Más Información</a>
                 </div>
@@ -343,7 +369,7 @@
     </main>
 
     <footer>
-        © 2026 Eventos Chiapas
+        © 2026 Eventos Chiapas · Cultura, Naturaleza y Tradición
     </footer>
 
 </body>
