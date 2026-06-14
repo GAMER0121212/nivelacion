@@ -8,9 +8,6 @@ Aplicar el uso de Git y GitHub en un entorno colaborativo mediante ramas, commit
 
 ## Integrantes
 - Luis Adrian miranda Mendez
-- Jiménez Sánchez Francisco Eduardo
-- Sosa Estrada Salvador Alejandro
-- Sara Elizabeth cruz Gómez 
 
 ## Tecnologías utilizadas
 - HTML5
@@ -28,6 +25,3 @@ Aplicar el uso de Git y GitHub en un entorno colaborativo mediante ramas, commit
 | Integrante | Participación | Calificación |
 |------------|---------------|--------------|
 | Luis Adrian miranda Mendez | Desarrollo principal | 100% |
-| Jiménez Sánchez Francisco Eduardo | Diseño | 100% |
-| Sosa Estrada Salvador Alejandro | Documentación | 100% |
-| Sara Elizabeth Cruz Gómez | Apoyo en desarrollo | 100% |
