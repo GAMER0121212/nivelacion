@@ -4,7 +4,7 @@ Para mantener un historial limpio y organizado en este proyecto, el equipo sigui
 
 ## Reglas para Ramas
 Cada integrante debió trabajar en una rama independiente creada a partir de `main` utilizando la estructura:
-* `rama-[nombre-seccion]` (Ejemplo: `rama-header`, `rama-contacto`, `rama-chiapas`)
+* `rama-[nombre-seccion]` (Ejemplo: `rama-main`, `rama-contacto`, `rama-eventos`)
 
 ## Mensajes de Commit
 Los commits debieron ser frecuentes (mínimo 3 por rama) y con mensajes claros en tiempo presente que describieran la acción exacta realizada:
